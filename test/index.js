@@ -15,6 +15,16 @@ ruleTester.run('require-class-field', rule, {
         this.foo = 42
       }
     }`,
+    `class Test {
+      a;
+      b;
+      c;
+      constructor () {
+        this.a = 1
+        this.b = 2
+        this.c = 3
+      }
+    }`,
     `const Foo = class {
       foo;
       constructor () {

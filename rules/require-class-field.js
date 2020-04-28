@@ -38,6 +38,10 @@ module.exports = {
             continue
           }
 
+          if (statement.key.name !== fieldName) {
+            continue
+          }
+
           classProp = statement
           break
         }
