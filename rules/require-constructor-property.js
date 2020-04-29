@@ -46,7 +46,7 @@ module.exports = {
             node: node,
             message: msg
           })
-          return
+          continue
         }
 
         const parsed = parseComment(
@@ -59,7 +59,7 @@ module.exports = {
             node: node,
             message: msg
           })
-          return
+          continue
         }
 
         const tags = []
@@ -82,7 +82,7 @@ module.exports = {
             node: node,
             message: msg
           })
-          return
+          continue
         }
 
         if (!typeTag.type) {
@@ -92,7 +92,7 @@ module.exports = {
             node: node,
             message: msg
           })
-          return
+          continue
         }
       }
     }
