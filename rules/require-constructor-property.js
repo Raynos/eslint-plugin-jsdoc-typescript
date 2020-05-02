@@ -21,11 +21,13 @@ module.exports = {
       const body = node.body.body
 
       let fields
+      let constructor
       for (const statement of body) {
         if (statement.kind !== 'constructor') {
           continue
         }
 
+        constructor = statement
         const constructorBody = statement.value.body.body
         fields = findFields(sourceCode, constructorBody)
         break
@@ -43,7 +45,7 @@ module.exports = {
           const msg = `Class ${className} is missing jsdoc ` +
             `for this.${fieldName} = `
           context.report({
-            node: node,
+            node: constructor,
             message: msg
           })
           continue
@@ -56,7 +58,7 @@ module.exports = {
           const msg = `Class ${className} is has invalid jsdoc for ` +
             `this.${fieldName} = `
           context.report({
-            node: node,
+            node: constructor,
             message: msg
           })
           continue
@@ -79,7 +81,7 @@ module.exports = {
           const msg = `Class ${className} is missing type ` +
             `declaration for this.${fieldName} = `
           context.report({
-            node: node,
+            node: constructor,
             message: msg
           })
           continue
@@ -89,7 +91,7 @@ module.exports = {
           const msg = `Class ${className} has empty type ` +
             `declaration for this.${fieldName} = `
           context.report({
-            node: node,
+            node: constructor,
             message: msg
           })
           continue

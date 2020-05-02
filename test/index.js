@@ -93,7 +93,7 @@ ruleTester.run('require-constructor-property', constructorPropRule, {
       }`,
       errors: [{
         message: 'Class Foo is missing jsdoc for this.foo = ',
-        type: 'ClassDeclaration'
+        type: 'MethodDefinition'
       }]
     },
     {
@@ -105,7 +105,7 @@ ruleTester.run('require-constructor-property', constructorPropRule, {
       }`,
       errors: [{
         message: 'Class Foo is missing type declaration for this.foo = ',
-        type: 'ClassDeclaration'
+        type: 'MethodDefinition'
       }]
     },
     {
@@ -117,7 +117,7 @@ ruleTester.run('require-constructor-property', constructorPropRule, {
       }`,
       errors: [{
         message: 'Class Foo is has invalid jsdoc for this.foo = ',
-        type: 'ClassDeclaration'
+        type: 'MethodDefinition'
       }]
     },
     {
@@ -129,7 +129,7 @@ ruleTester.run('require-constructor-property', constructorPropRule, {
       }`,
       errors: [{
         message: 'Class Foo has empty type declaration for this.foo = ',
-        type: 'ClassDeclaration'
+        type: 'MethodDefinition'
       }]
     },
     {
@@ -140,7 +140,7 @@ ruleTester.run('require-constructor-property', constructorPropRule, {
       }`,
       errors: [{
         message: 'Class <anon> is missing jsdoc for this.foo = ',
-        type: 'ClassExpression'
+        type: 'MethodDefinition'
       }]
     }
   ]
