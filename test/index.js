@@ -16,6 +16,9 @@ ruleTester.run('require-class-field', classFieldRule, {
         this.foo = 42
       }
     }`,
+    `class Foo {
+      constructor()
+    }`,
     `class Test {
       a;
       b;
