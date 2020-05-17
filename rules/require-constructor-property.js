@@ -28,6 +28,10 @@ module.exports = {
         }
 
         constructor = statement
+
+        if (!statement.value.body || !statement.value.body.body) {
+          continue
+        }
         const constructorBody = statement.value.body.body
         fields = findFields(sourceCode, constructorBody)
         break

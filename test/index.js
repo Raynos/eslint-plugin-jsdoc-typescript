@@ -67,6 +67,9 @@ ruleTester.run('require-constructor-property', constructorPropRule, {
         this.foo = 42
       }
     }`,
+    `class Foo {
+      constructor()
+    }`,
     `class Test {
       constructor () {
         /** @type {number} */
